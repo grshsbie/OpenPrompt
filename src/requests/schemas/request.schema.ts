@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-@Schema({ timestamps: true }) // فعال کردن timestamps برای اضافه کردن createdAt و updatedAt
+@Schema({ timestamps: true })
 export class Request extends Document {
   @Prop({ required: true })
   userId: string;
@@ -12,10 +12,10 @@ export class Request extends Document {
   @Prop({ required: true })
   method: string;
 
-  @Prop({ type: Map, of: String, default: {} }) // مشخص کردن نوع برای headers به عنوان Map
+  @Prop({ type: Map, of: String, default: {} })
   headers: Map<string, string>;
 
-  @Prop({ type: Object, default: {} }) // مشخص کردن نوع برای body به عنوان Object
+  @Prop({ type: Object, default: {} })
   body: Record<string, any>;
 
   @Prop({ required: true })

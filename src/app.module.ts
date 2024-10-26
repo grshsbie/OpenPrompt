@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { AuthModule } from './auth/auth.module';
+import { AuåthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ApiModule } from './api/api.module';
 import { RequestsModule } from './requests/requests.module';
@@ -15,8 +15,8 @@ import { AppController } from './ app.controller';
 @Module({
   imports: [
     MongooseModule.forRoot('', {
-      connectTimeoutMS: 30000, // زمان اتصال به میلی‌ثانیه
-      serverSelectionTimeoutMS: 60000, // مدت زمان انتظار برای انتخاب سرور
+      connectTimeoutMS: 30000,
+      serverSelectionTimeoutMS: 60000,
     }),
     AuthModule,
     UsersModule,
@@ -27,6 +27,6 @@ import { AppController } from './ app.controller';
     DashboardModule,
     CollaborationModule,
   ],
-  controllers: [AppController], // ثبت کنترلر
+  controllers: [AppController],
 })
 export class AppModule {}

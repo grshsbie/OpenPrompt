@@ -10,6 +10,4 @@ export class ApiController {
   async makeApiRequest(@Body() apiRequestDto: ApiRequestDto) {
     return this.apiService.makeRequest(apiRequestDto);
   }
-
-
 }
